@@ -21,4 +21,4 @@ This project is licensed under the Creative Commons Attribution-NonCommercial-No
 
 Hiring managers, technical screeners, and recruiters are fully authorized and encouraged to clone, review, and inspect the source architecture for professional and technical engineering evaluation.
 
-Replication, unauthorized public hosting, or direct cloning of the interface visual elements, layout design tokens, or embedded sandbox game loops for personal portfolio use is strictly prohibited.
+Replication, unauthorized public hosting, or direct cloning of the interface visual elements, layout design tokens, or embedded systems for personal portfolio use is strictly prohibited.
