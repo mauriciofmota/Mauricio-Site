@@ -6,20 +6,56 @@ const rightArrow = document.getElementById('slideRight');
 let isDown = false;
 let startX;
 let scrollLeft;
+let isHovering = false;
 
 timeline.addEventListener('mousedown', (e) => {
-  isDown = true;
-  startX = e.pageX - timeline.offsetLeft;
-  scrollLeft = timeline.scrollLeft;
+  if (e.button === 1) {
+    return;
+  }
+  if (e.button === 0 || e.button === 2) {
+    isDown = true;
+    timeline.classList.add('active');
+    startX = e.pageX - timeline.offsetLeft;
+    scrollLeft = timeline.scrollLeft;
+  }
 });
-
+timeline.addEventListener('mouseenter', () => {
+  isHovering = true;
+  console.log("hovering");
+});
 timeline.addEventListener('mouseleave', () => {
   isDown = false;
+  isHovering = false;
+  console.log("unhovering");
 });
 
 timeline.addEventListener('mouseup', () => {
   isDown = false;
 });
+
+function handleInteraction() {
+  if (isHovering) {
+    console.log("do");
+  }
+}
+function toggleTimelineState(shouldBeActive) {
+  if (isHovering) {
+    window.addEventListener('mousemove', myComplexDragCode);
+    console.log("EventListener is now actively listening.");
+  } else {
+    window.removeEventListener('mousemove', myComplexDragCode);
+    console.log("EventListener has been completely disconnected.");
+  }
+}
+
+function myComplexDragCode(e) {
+  if (e.buttons !== 4) return;
+  e.preventDefault();
+  if (e.movementY !== 0) {
+    timeline.scrollLeft += e.movementY * 1.5;
+    console.log(`Middle-click dragging. Movement direction: ${e.movementY > 0 ? 'downwards' : 'upwards'}. Delta: ${e.movementY}`);
+  }
+}
 
 timeline.addEventListener('mousemove', (e) => {
   if (!isDown) return;
@@ -64,8 +100,3 @@ function smoothScrollTo(element, targetDelta, duration) {
 
 
 // PREVENTING OF BUGS
-timeline.addEventListener('mousedown', (e) => {
-  if (e.button === 1) {
-    e.preventDefault();
-  }
-});
