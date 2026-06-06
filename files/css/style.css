@@ -103,6 +103,17 @@ p {
   text-decoration: none;
 }
 
+.bio-box {
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.bio-box p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
 .description-box {
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
