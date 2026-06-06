@@ -368,25 +368,135 @@ a:hover {
 /*--- ---*/
 /*--- ---*/
 /*--- ---*/
-/*--- Badges ---*/
+/*--- Tech Stack ---*/
 
-.badges-box {
-  background-color: #ffffff;
-  border: 1px solid #410000;
-  border-radius: 6px;
-  padding: 1.5rem;
-  margin-top: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+#tech-stack {
+  padding: 3rem 1rem;
+  max-width: 2200px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.badges-box p {
-  color: #555555;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin: 0;
+.stack-title {
+  color: #ffffff;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
   text-align: center;
-  overflow-wrap: break-word;
-  word-break: break-word;
+  width: 100%;
+}
+
+.skills-panel {
+  background-color: #ffffff;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+
+  width: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  border-radius: 20px;
+}
+
+.panel-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.bottom-row {
+  gap: 0.8rem;
+}
+
+.panel-item {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    filter 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sub-item {
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+}
+
+.tech-text {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  user-select: none;
+  letter-spacing: 0.5px;
+}
+
+.sub-item .tech-text {
+  font-size: 0.65rem;
+}
+
+.item-cpp {
+  background: #00599c;
+}
+.item-csharp {
+  background: #178600;
+}
+.item-python {
+  background: #306998;
+}
+.item-java {
+  background: #d87300;
+}
+.item-js {
+  background: #e5c110;
+}
+.item-js .tech-text {
+  color: #000000;
+}
+
+/* Minor Frameworks Colors */
+.item-vulkan {
+  background: #a01d1d;
+}
+.item-dotnet {
+  background: #512bd4;
+}
+.item-linux {
+  background: #f8b500;
+}
+.item-linux .tech-text {
+  color: #000000;
+}
+.item-git {
+  background: #f05032;
+}
+.item-vscode {
+  background: #007acc;
+}
+
+.panel-item:hover {
+  cursor: pointer;
+  transform: translateY(-4px) scale(1.05);
+  outline: 3px solid #0f0f0f;
+  box-shadow: 0 8px 20px rgba(0, 145, 255, 0.4);
 }
 
 /*--- ---*/
