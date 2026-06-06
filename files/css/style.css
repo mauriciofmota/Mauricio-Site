@@ -181,6 +181,22 @@ a:hover {
   text-decoration: underline;
 }
 
+.section-divider {
+  border: none;
+  height: 4px;
+  width: 100%;
+
+  margin: 6rem auto;
+  background: radial-gradient(
+    circle,
+    rgba(255, 0, 0, 0.15) 0%,
+    rgba(255, 0, 0, 0) 100%
+  );
+
+  position: relative;
+  z-index: 10;
+}
+
 /*--- ---*/
 /*--- ---*/
 /*--- ---*/
