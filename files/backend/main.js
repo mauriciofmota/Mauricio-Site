@@ -31,18 +31,41 @@ timeline.addEventListener('mousemove', (e) => {
 
 
 // FEATURE 2: SIDE ARROWS BUTTON LOGIC
-const scrollAmount = 450;
+const itemStepScrollDistance = 448; 
 
 rightArrow.addEventListener('click', () => {
-  timeline.scrollBy({
-    left: scrollAmount,
-    behavior: 'smooth'
-  });
+  smoothScrollTo(timeline, itemStepScrollDistance, 600);
 });
 
 leftArrow.addEventListener('click', () => {
-  timeline.scrollBy({
-    left: -scrollAmount,
-    behavior: 'smooth'
-  });
+  smoothScrollTo(timeline, -itemStepScrollDistance, 600);
+});
+
+function smoothScrollTo(element, targetDelta, duration) {
+  const startPos = element.scrollLeft;
+  const targetPos = startPos + targetDelta;
+  const startTime = performance.now();
+
+  function animationLoop(currentTime) {
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+
+    const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+
+    element.scrollLeft = startPos + (targetDelta * easeOutCubic);
+
+    if (progress < 1) {
+      requestAnimationFrame(animationLoop);
+    }
+  }
+
+  requestAnimationFrame(animationLoop);
+}
+
+
+// PREVENTING OF BUGS
+timeline.addEventListener('mousedown', (e) => {
+  if (e.button === 1) {
+    e.preventDefault();
+  }
 });
