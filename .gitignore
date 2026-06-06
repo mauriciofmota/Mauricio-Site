@@ -61,3 +61,4 @@ node_modules/
 # Arquivos de configuração de deploy local
 .env
 .env.local
+colacc
