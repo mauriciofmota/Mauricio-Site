@@ -406,25 +406,29 @@ a:hover {
   width: 100%;
 }
 
-.timeline {
+.timeline-wrapper {
   position: relative;
   width: 100vw;
-  position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: hidden;
+}
 
-  padding: 3rem 2rem;
+.timeline {
+  position: relative;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  padding: 3rem 5rem;
+
+  overflow-x: auto;
+  overflow-y: hidden;
 
   cursor: grab;
   user-select: none;
-
   scrollbar-width: none;
 }
 
@@ -436,9 +440,6 @@ a:hover {
   display: none;
 }
 
-.timeline::-webkit-scrollbar {
-  display: none;
-}
 .timeline-line {
   position: absolute;
   top: 50%;
@@ -486,7 +487,7 @@ a:hover {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 100;
 
   background-color: rgba(16, 16, 16, 0.8);
   color: #ffffff;
@@ -515,11 +516,11 @@ a:hover {
 }
 
 .left-arrow {
-  left: 20px;
+  left: calc(-50vw + 50% + 20px);
 }
 
 .right-arrow {
-  right: 20px;
+  right: calc(-50vw + 50% + 20px);
 }
 
 @media (min-width: 769px) {
@@ -541,6 +542,25 @@ a:hover {
 
   .timeline-item:nth-child(even) {
     align-self: flex-end;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-wrapper {
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .timeline {
+    padding: 2rem 0;
+    overflow-x: visible;
+  }
+
+  .timeline-arrow {
+    display: none;
   }
 }
 
