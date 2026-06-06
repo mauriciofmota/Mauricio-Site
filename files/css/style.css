@@ -1,33 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    sans-serif;
-  line-height: 1.6;
-  color: #333333;
-  background-color: #f9f9f9;
-}
-
-a {
-  text-decoration: none;
-  color: #0066cc;
-}
-
-a:hover {
-  text-decoration: underline;
-}
+/*--- Header ---*/
 
 header {
   background-color: #ffffff;
@@ -43,6 +14,37 @@ header .logo {
   font-size: 1.3rem;
   color: #111111;
 }
+
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- Navigation ---*/
 
 nav ul {
   list-style: none;
@@ -60,15 +62,78 @@ nav a:hover {
   text-decoration: none;
 }
 
+/*--- Main ---*/
 main {
   max-width: 800px;
   margin: 2rem auto;
   padding: 0 1.5rem;
 }
 
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- Section ---*/
+
 section {
   margin-bottom: 3rem;
 }
+
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- MustHaveOnes ---*/
 
 h1,
 h2 {
@@ -83,6 +148,70 @@ h1 {
 p {
   margin-bottom: 1.5rem;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*--- Body ---*/
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
+  line-height: 1.6;
+  color: #333333;
+  background-color: #f9f9f9;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #0066cc;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- Button ---*/
+
 .button-container {
   display: flex;
   justify-content: center;
@@ -103,6 +232,37 @@ p {
   text-decoration: none;
 }
 
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- Biography ---*/
+
 .bio-box {
   padding: 1.5rem;
   margin-top: 1.5rem;
@@ -113,6 +273,37 @@ p {
   line-height: 1.6;
   margin: 0;
 }
+
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- Description ---*/
 
 .description-box {
   background-color: #ffffff;
@@ -131,6 +322,37 @@ p {
   overflow-wrap: break-word;
   word-break: break-word;
 }
+
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- Badges ---*/
 
 .badges-box {
   background-color: #ffffff;
@@ -151,47 +373,143 @@ p {
   word-break: break-word;
 }
 
-.exp-box {
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- TIMELINE STYLING ---*/
+
+.timeline {
   position: relative;
-  max-width: 1200px;
-  margin: 4rem auto;
-  padding: 2rem 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-}
+  gap: 1.5rem;
 
-.exp-line {
+  scrollbar-width: none;
+}
+.timeline::-webkit-scrollbar {
+  display: none;
+}
+.timeline-line {
   position: absolute;
   top: 50%;
   left: 0;
   width: 100%;
+  min-width: max-content;
   height: 4px;
   background-color: #ffffff;
   transform: translateY(-50%);
   z-index: 1;
 }
-.exp-box p {
-  color: #555555;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin: 0;
-}
-.exp-item {
+
+.timeline-item {
   position: relative;
   display: flex;
-  width: 100%;
+  width: 400px;
+  flex-shrink: 0;
   z-index: 2;
 }
 
-.exp-content {
-  width: calc(33.33% - 1rem);
+.exp-box {
+  width: 100%;
+  height: 180px;
   background-color: #808080;
   color: #ffffff;
   padding: 1.5rem;
   border-radius: 6px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
 }
+
+.exp-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.exp-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (min-width: 769px) {
+  .timeline {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 500px;
+    gap: 3rem;
+  }
+
+  .timeline-item {
+    width: 400px;
+  }
+
+  .timeline-item:nth-child(odd) {
+    align-self: flex-start;
+  }
+
+  .timeline-item:nth-child(even) {
+    align-self: flex-end;
+  }
+}
+
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
+/*--- ---*/
 
 .acd-box {
   background-color: #ffffff;
