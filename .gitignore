@@ -53,3 +53,11 @@ build/
 # Se futuramente usar pacotes node para otimizar CSS/JS
 node_modules/
 .eslintcache
+
+# Cache do Navegador e Logs Locais
+.sass-cache/
+.eslintcache
+
+# Arquivos de configuração de deploy local
+.env
+.env.local
