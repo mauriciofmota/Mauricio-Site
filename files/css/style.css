@@ -239,7 +239,8 @@ a:hover {
 .btn-hitbox {
   display: block;
   position: relative;
-  width: 170px;
+  width: max-content;
+  min-width: 170px;
   height: 130px;
   text-decoration: none;
   cursor: pointer;
@@ -254,14 +255,17 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
+
   background-color: #111111;
   color: #ffffff;
   font-weight: 500;
   border-radius: 4px;
   overflow: hidden;
   z-index: 2;
+
   transition:
     height 0.3s ease,
+    width 0.3s ease,
     background-color 0.3s ease;
 }
 
@@ -277,12 +281,15 @@ a:hover {
 }
 
 .treadmill-window {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 40px;
-  overflow: hidden;
+  padding: 0 4px;
   opacity: 0;
   z-index: 1;
   transform: translateY(-10px);
@@ -293,6 +300,7 @@ a:hover {
 
 .treadmill-track {
   display: flex;
+  justify-content: center;
   gap: 6px;
   width: max-content;
 }
@@ -301,8 +309,10 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 26px;
+
+  width: 35px;
   height: 35px;
+
   background-color: #ffffff;
   border: 2px solid #111111;
   border-radius: 4px;
@@ -328,19 +338,6 @@ a:hover {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 0.1s;
-}
-
-.btn-hitbox:hover .treadmill-track {
-  animation: treadmillLoop 5s linear infinite;
-}
-
-@keyframes treadmillLoop {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
 }
 
 /*--- ---*/
