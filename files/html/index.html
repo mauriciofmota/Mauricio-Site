@@ -41,16 +41,13 @@
             </div>
         </section>
         <section id="portfolio">
-
             <div class="button-container">
 
-                <div class="btn-hitbox">
-
+                <div class="btn-hitbox" data-project="blog">
                     <span class="btn-visual">
                         <span class="text-normal">BUTTON</span>
                         <span class="text-hover">BLOG</span>
                     </span>
-
                     <div class="treadmill-window">
                         <div class="treadmill-track">
                             <div class="box">1</div>
@@ -58,18 +55,15 @@
                             <div class="box">3</div>
                             <div class="box">4</div>
                             <div class="box">5</div>
-
                         </div>
                     </div>
-
                 </div>
 
-                <div class="btn-hitbox">
+                <div class="btn-hitbox" data-project="games">
                     <span class="btn-visual">
                         <span class="text-normal">BUTTON</span>
-                        <span class="text-hover">BLOG</span>
+                        <span class="text-hover">GAMES</span>
                     </span>
-
                     <div class="treadmill-window">
                         <div class="treadmill-track">
                             <div class="box">1</div>
@@ -79,68 +73,28 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="btn-hitbox">
-                    <span class="btn-visual">
-                        <span class="text-normal">BUTTON</span>
-                        <span class="text-hover">BLOG</span>
-                    </span>
-
-                    <div class="treadmill-window">
-                        <div class="treadmill-track">
-                            <div class="box">1</div>
-                            <div class="box">2</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="btn-hitbox">
-                    <span class="btn-visual">
-                        <span class="text-normal">BUTTON</span>
-                        <span class="text-hover">BLOG</span>
-                    </span>
-
-                    <div class="treadmill-window">
-                        <div class="treadmill-track">
-                            <div class="box">1</div>
-
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
 
             <div class="description-box">
-                <p>
-                    <!-- TODO: Auto change the project display based on the button clicked and also add images and etc-->
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
+                <div class="slider-stack" id="sliderStack"></div>
 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
+                <div class="slider-main">
+                    <button class="slider-arrow left" id="prevBtn">&#10094;</button>
 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
+                    <div class="slider-content">
+                        <div class="slider-media" id="sliderMedia"></div>
+                        <p id="sliderText">
+                            Select a project button above to view documentation and asset information.
+                        </p>
+                    </div>
 
+                    <button class="slider-arrow right" id="nextBtn">&#10095;</button>
+                </div>
 
-                </p>
+                <div class="slider-dots" id="sliderDots"></div>
             </div>
         </section>
+
         <section id="tech-stack">
             <h2 class="stack-title">Tech Stack & Tools</h2>
 
@@ -306,6 +260,7 @@
         </section>
     </main>
     <script src="../backend/main.js"></script>
+    <script src="../backend/slidelogic.js"></script>
 </body>
 
 <footer>
