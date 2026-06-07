@@ -3,6 +3,8 @@ const leftArrow = document.getElementById('slideLeft');
 const rightArrow = document.getElementById('slideRight');
 
 
+
+
 let isDown = false;
 let startX;
 let scrollLeft;
@@ -97,6 +99,3 @@ function smoothScrollTo(element, targetDelta, duration) {
 
   requestAnimationFrame(animationLoop);
 }
-
-
-// PREVENTING OF BUGS

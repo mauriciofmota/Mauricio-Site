@@ -235,17 +235,112 @@ a:hover {
   gap: 1rem;
   margin-bottom: 2rem;
 }
-.btn {
-  display: inline-block;
+
+.btn-hitbox {
+  display: block;
+  position: relative;
+  width: 170px;
+  height: 130px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: #111111;
   color: #ffffff;
-  padding: 3.2rem 3rem;
-  border-radius: 4px;
   font-weight: 500;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 2;
+  transition:
+    height 0.3s ease,
+    background-color 0.3s ease;
 }
-.btn:hover {
+
+.text-normal {
+  opacity: 1;
+  transition: opacity 0.15s;
+}
+
+.text-hover {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.treadmill-window {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 1;
+  transform: translateY(-10px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.treadmill-track {
+  display: flex;
+  gap: 6px;
+  width: max-content;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 35px;
+  background-color: #ffffff;
+  border: 2px solid #111111;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.btn-hitbox:hover .btn-visual {
   background-color: #333333;
-  text-decoration: none;
+  height: 80px;
+}
+
+.btn-hitbox:hover .text-normal {
+  opacity: 0;
+}
+
+.btn-hitbox:hover .text-hover {
+  opacity: 1;
+}
+
+.btn-hitbox:hover .treadmill-window {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.btn-hitbox:hover .treadmill-track {
+  animation: treadmillLoop 5s linear infinite;
+}
+
+@keyframes treadmillLoop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /*--- ---*/
