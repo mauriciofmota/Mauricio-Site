@@ -100,6 +100,3 @@ function smoothScrollTo(element, targetDelta, duration) {
   requestAnimationFrame(animationLoop);
 }
 
-document.querySelectorAll('.treadmill-track').forEach(track => {
-  track.innerHTML += track.innerHTML;
-});
