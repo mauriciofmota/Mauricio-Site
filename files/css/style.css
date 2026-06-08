@@ -412,8 +412,6 @@ a:hover {
 /*--- ---*/
 /*--- ---*/
 /*--- Description ---*/
-
-/* --- Description Box Slider Wrapper --- */
 .description-box {
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
@@ -695,12 +693,7 @@ a:hover {
 /*--- ---*/
 /*--- TIMELINE STYLING ---*/
 
-#experiences {
-  position: relative;
-  width: 100%;
-}
-
-.timeline-wrapper {
+.timeline-outer-container {
   position: relative;
   width: 100vw;
   left: 50%;
@@ -708,19 +701,28 @@ a:hover {
   margin-left: -50vw;
   margin-right: -50vw;
   overflow: hidden;
+  background-color: #666666;
+  padding: 4rem 0;
+}
+
+.timeline-wrapper {
+  width: 100%;
+  overflow: hidden;
 }
 
 .timeline {
   position: relative;
-  width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 3rem 5rem;
-
+  flex-direction: row;
+  align-items: center;
+  height: 220px;
+  justify-content: space-around;
+  width: 100%;
+  min-width: max-content;
+  gap: 4rem;
+  padding: 0 6rem;
   overflow-x: auto;
   overflow-y: hidden;
-
   cursor: grab;
   user-select: none;
   scrollbar-width: none;
@@ -739,123 +741,97 @@ a:hover {
   top: 50%;
   left: 0;
   width: 100%;
-  min-width: max-content;
   height: 4px;
   background-color: #ffffff;
   transform: translateY(-50%);
   z-index: 1;
 }
 
-.timeline-item {
+.timeline-node {
   position: relative;
   display: flex;
-  width: 400px;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
   flex-shrink: 0;
   z-index: 2;
-}
-
-.exp-box {
-  width: 100%;
-  height: 180px;
-  background-color: #808080;
-  color: #ffffff;
-  padding: 1.5rem;
-  border-radius: 6px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
-}
-
-.exp-title {
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-}
-
-.exp-desc {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.timeline-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 100;
-
-  background-color: rgba(16, 16, 16, 0.8);
-  color: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 50%;
-
-  width: 45px;
-  height: 45px;
-  font-size: 1.2rem;
   cursor: pointer;
+}
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.node-title {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
   transition:
-    background-color 0.2s ease,
-    transform 0.1s ease;
+    color 0.2s,
+    transform 0.2s;
 }
 
-.timeline-arrow:hover {
-  background-color: rgba(51, 51, 51, 0.9);
+.node-dot {
+  width: 14px;
+  height: 14px;
+  background-color: #666666;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  transition:
+    background-color 0.2s,
+    transform 0.2s,
+    border-color 0.2s;
 }
 
-.timeline-arrow:active {
-  transform: translateY(-50%) scale(0.95);
+.timeline-node:nth-child(odd) {
+  flex-direction: column;
+  margin-bottom: 5.5rem;
+}
+.timeline-node:nth-child(odd) .node-dot {
+  order: 2;
 }
 
-.left-arrow {
-  left: calc(-50vw + 50% + 20px);
+.timeline-node:nth-child(even) {
+  flex-direction: column;
+  margin-top: 5.5rem;
+}
+.timeline-node:nth-child(even) .node-dot {
+  order: 1;
 }
 
-.right-arrow {
-  right: calc(-50vw + 50% + 20px);
+.timeline-node:hover .node-title,
+.timeline-node.active .node-title {
+  color: #ff3333;
 }
 
-@media (min-width: 769px) {
-  .timeline {
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    height: 500px;
-    gap: 3rem;
-  }
-
-  .timeline-item {
-    width: 400px;
-  }
-
-  .timeline-item:nth-child(odd) {
-    align-self: flex-start;
-  }
-
-  .timeline-item:nth-child(even) {
-    align-self: flex-end;
-  }
+.timeline-node:hover .node-dot {
+  border-color: #ff3333;
+  transform: scale(1.2);
 }
 
-@media (max-width: 768px) {
-  .timeline-wrapper {
-    width: 100%;
-    left: 0;
-    right: 0;
-    margin-left: 0;
-    margin-right: 0;
-  }
+.timeline-node.active .node-dot {
+  background-color: #ff3333;
+  border-color: #ffffff;
+  transform: scale(1.3);
+}
 
-  .timeline {
-    padding: 2rem 0;
-    overflow-x: visible;
-  }
+.experience-details-box {
+  max-width: 800px;
+  margin: 2.5rem auto 0 auto;
+  background-color: #111111;
+  border: 1px solid #333333;
+  border-radius: 6px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  min-height: 150px;
+}
 
-  .timeline-arrow {
-    display: none;
-  }
+.experience-details-box p {
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+  white-space: pre-line;
 }
 
 /*--- ---*/
