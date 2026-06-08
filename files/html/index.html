@@ -140,21 +140,65 @@
         </section>
 
         <section id="experiences">
-            <div class="experience-tabs">
-                <button class="exp-tab active" data-exp="exp01">EXPERIENCE 01</button>
-                <button class="exp-tab" data-exp="exp02">EXPERIENCE 02</button>
-                <button class="exp-tab" data-exp="exp03">EXPERIENCE 03</button>
-                <button class="exp-tab" data-exp="exp04">EXPERIENCE 04</button>
-                <button class="exp-tab" data-exp="exp05">EXPERIENCE 05</button>
+
+            <!-- The Full-Width Horizontal Timeline Track -->
+            <div class="timeline-outer-container">
+
+                <div class="timeline-wrapper">
+                    <div class="timeline" id="timelineContainer">
+
+                        <!-- The continuous horizontal white line across the page -->
+                        <div class="timeline-line"></div>
+
+                        <!-- Interactive node positions (odd indexes go top, even indexes go bottom) -->
+                        <div class="timeline-node active" data-exp="exp01">
+                            <span class="node-title">EXPERIENCE 01</span>
+                            <div class="node-dot"></div>
+                        </div>
+
+                        <div class="timeline-node" data-exp="exp02">
+                            <span class="node-title">EXPERIENCE 02</span>
+                            <div class="node-dot"></div>
+                        </div>
+
+                        <div class="timeline-node" data-exp="exp03">
+                            <span class="node-title">EXPERIENCE 03</span>
+                            <div class="node-dot"></div>
+                        </div>
+
+                        <div class="timeline-node" data-exp="exp04">
+                            <span class="node-title">EXPERIENCE 04</span>
+                            <div class="node-dot"></div>
+                        </div>
+
+                        <div class="timeline-node" data-exp="exp05">
+                            <span class="node-title">EXPERIENCE 05</span>
+                            <div class="node-dot"></div>
+                        </div>
+
+                        <div class="timeline-node" data-exp="exp05">
+                            <span class="node-title">EXPERIENCE 05</span>
+                            <div class="node-dot"></div>
+                        </div>
+
+                        <div class="timeline-node" data-exp="exp05">
+                            <span class="node-title">EXPERIENCE 05</span>
+                            <div class="node-dot"></div>
+                        </div>
+                        <div class="timeline-node" data-exp="exp05">
+                            <span class="node-title">EXPERIENCE 05</span>
+                            <div class="node-dot"></div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
+            <!-- Centered Description Display Box below the full line -->
             <div class="experience-details-box">
-                <p id="expDetailsText">
-                    Select an experience block above to view role contributions and system metrics.
-                </p>
+                <p id="expDetailsText">Select an experience node above to view role details.</p>
             </div>
         </section>
-
 
         </div>
         </section>

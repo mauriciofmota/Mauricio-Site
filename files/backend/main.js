@@ -1,101 +1,21 @@
-const timeline = document.getElementById('timelineContainer');
-const leftArrow = document.getElementById('slideLeft');
-const rightArrow = document.getElementById('slideRight');
+const experienceContent = {
+  exp01: "EXPERIENCE 1 DETAIL PROFILE:\n• Optimized backend data pipelines using C++, dropping frame cycle calculation overloads by 14%.\n• Managed threading buffers across internal engine subsystems.",
+  exp02: "EXPERIENCE 2 DETAIL PROFILE:\n• Implemented custom gameplay mechanics and controller mapping wrappers inside Unity.\n• Refactored system scripts to minimize runtime allocation spikes.",
+  exp03: "EXPERIENCE 3 DETAIL PROFILE:\n• Custom system architecture and deployment profiling documentation goes right here.",
+  exp04: "EXPERIENCE 4 DETAIL PROFILE:\n• Details regarding systems infrastructure or graphics pipeline programming milestones.",
+  exp05: "EXPERIENCE 5 DETAIL PROFILE:\n• Academic achievements, technical research, or computer science foundations documentation."
+};
+
+// Node Selector
+document.querySelectorAll('.timeline-node').forEach(node => {
+  node.addEventListener('click', () => {
+    document.querySelectorAll('.timeline-node').forEach(n => n.classList.remove('active'));
+    node.classList.add('active');
 
 
-
-
-let isDown = false;
-let startX;
-let scrollLeft;
-let isHovering = false;
-
-timeline.addEventListener('mousedown', (e) => {
-  if (e.button === 1) {
-    return;
-  }
-  if (e.button === 0 || e.button === 2) {
-    isDown = true;
-    timeline.classList.add('active');
-    startX = e.pageX - timeline.offsetLeft;
-    scrollLeft = timeline.scrollLeft;
-  }
-});
-timeline.addEventListener('mouseenter', () => {
-  isHovering = true;
-  console.log("hovering");
-});
-timeline.addEventListener('mouseleave', () => {
-  isDown = false;
-  isHovering = false;
-  console.log("unhovering");
+    const selectedKey = node.getAttribute('data-exp');
+    document.getElementById('expDetailsText').textContent = experienceContent[selectedKey];
+  });
 });
 
-timeline.addEventListener('mouseup', () => {
-  isDown = false;
-});
-
-function handleInteraction() {
-  if (isHovering) {
-    console.log("do");
-  }
-}
-function toggleTimelineState(shouldBeActive) {
-  if (isHovering) {
-    window.addEventListener('mousemove', myComplexDragCode);
-    console.log("EventListener is now actively listening.");
-  } else {
-    window.removeEventListener('mousemove', myComplexDragCode);
-    console.log("EventListener has been completely disconnected.");
-  }
-}
-
-function myComplexDragCode(e) {
-  if (e.buttons !== 4) return;
-  e.preventDefault();
-  if (e.movementY !== 0) {
-    timeline.scrollLeft += e.movementY * 1.5;
-    console.log(`Middle-click dragging. Movement direction: ${e.movementY > 0 ? 'downwards' : 'upwards'}. Delta: ${e.movementY}`);
-  }
-}
-
-timeline.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - timeline.offsetLeft;
-  const walk = (x - startX) * 1.5;
-  timeline.scrollLeft = scrollLeft - walk;
-});
-
-
-// FEATURE 2: SIDE ARROWS BUTTON LOGIC
-const itemStepScrollDistance = 448; 
-
-rightArrow.addEventListener('click', () => {
-  smoothScrollTo(timeline, itemStepScrollDistance, 600);
-});
-
-leftArrow.addEventListener('click', () => {
-  smoothScrollTo(timeline, -itemStepScrollDistance, 600);
-});
-
-function smoothScrollTo(element, targetDelta, duration) {
-  const startPos = element.scrollLeft;
-  const targetPos = startPos + targetDelta;
-  const startTime = performance.now();
-
-  function animationLoop(currentTime) {
-    const timeElapsed = currentTime - startTime;
-    const progress = Math.min(timeElapsed / duration, 1);
-
-    const easeOutCubic = 1 - Math.pow(1 - progress, 3);
-
-    element.scrollLeft = startPos + (targetDelta * easeOutCubic);
-
-    if (progress < 1) {
-      requestAnimationFrame(animationLoop);
-    }
-  }
-
-  requestAnimationFrame(animationLoop);
-}
+document.querySelector('.timeline-node[data-exp="exp01"]').click();
