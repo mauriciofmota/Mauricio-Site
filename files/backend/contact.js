@@ -8,3 +8,5 @@ export default {
     return new Response("No Acess.", { status: 403 });
   }
 };
+
+//TOADD visitors count, url shortener, metrics
