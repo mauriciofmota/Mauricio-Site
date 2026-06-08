@@ -262,32 +262,24 @@
     <div class="footer-container">
 
         <div class="footer-form-wrapper">
-            <form action="https://api.web3forms.com/submit" method="POST" class="footer-form">
-                <input type="hidden" name="access_key" value="">
+            <div class="form-actions-row">
 
-                <div class="form-row">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                </div>
+                <a href="https://portfolio-vault.motamurono.workers.dev/email" class="submit-btn">
+                    <span>Send Email</span>
+                </a>
 
-                <textarea name="message" placeholder="Type your message here..." rows="3" required></textarea>
+                <a href="https://portfolio-vault.motamurono.workers.dev/whatsapp" target="_blank" class="zap-btn-link">
+                    <span class="zap-btn">Send zap Message</span>
+                </a>
 
-                <div class="form-actions-row">
-                    <button type="submit" class="submit-btn">Send E-Mail Message</button>
-
-                    <a href="https://wa.me/99888887777?text=Hi%20Mauricio!%20I%20just%20saw%20your%20portfolio%20and%20wanted%20to%20get%20in%20touch."
-                        target="_blank" rel="noopener noreferrer" class="zap-btn-link">
-                        <span class="zap-btn">Send zap Message</span>
-                    </a>
-                </div>
-            </form>
+            </div>
         </div>
 
         <div class="footer-info">
             <p>&copy; 2026 Mauricio Francisco. Todos os direitos reservados.</p>
             <p class="wip-text">WIP WIP WIP WIP WIP WIP WIP</p>
         </div>
-
+        <script src="../backend/contact.js"></script>
     </div>
 </footer>
 </body>
