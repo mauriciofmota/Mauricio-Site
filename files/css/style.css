@@ -558,18 +558,20 @@ a:hover {
 }
 
 .skills-panel {
-  background-color: #ffffff;
-  padding: 2rem;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.4)),
+    url("../images/headetest.avif") no-repeat center,
+    #ffffff;
 
+  background-size: auto, cover, auto;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-
   width: auto;
   max-width: 100%;
   box-sizing: border-box;
-
   border-radius: 20px;
 }
 
@@ -614,13 +616,23 @@ a:hover {
   user-select: none;
   letter-spacing: 0.5px;
 }
-
+.tech-icon {
+  width: 65%;
+  height: 65%;
+  object-fit: contain;
+  pointer-events: none;
+}
 .sub-item .tech-text {
   font-size: 0.65rem;
 }
 
 .item-cpp {
-  background: #00599c;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.4)),
+    url("../images/subtle-grid-mesh.png") repeat center,
+    #00599c;
+
+  background-size: auto, cover, auto;
 }
 .item-csharp {
   background: #178600;
