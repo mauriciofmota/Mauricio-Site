@@ -1,8 +1,9 @@
+//#region Debug
 const DEBUG_MODE = false;
 const EXTRA_TIP_SPACING = 20;
-
-
 const DESC_FONT_SCALE_MULTIPLIER = 1.40;
+
+//#endregion
 
 const CORE_STYLE = {
   backgroundColor: "#ffffff",
@@ -102,18 +103,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   randomizeShardOrbits(true);
-
+//#region ArrowColorsHere
   function calculateArrowProperties(item) {
     const isImportant = item.importance >= 4;
     const arrowWidth = isImportant ? 12 : 5; 
-    
+    //todo: add more colors
     let color = "#00bcff"; 
     if (item.type === "certification") color = "#ffaa00"; 
+    //todo: change importance color logic
     if (isImportant) color = "#ff0055"; 
     
     return { width: arrowWidth, color, isGoalCritical: isImportant };
   }
+//#endregion
 
+//#region arrows 
 
   function drawArrowBody(context, sX, sY, eX, eY, properties) {
     context.beginPath();
@@ -151,22 +155,9 @@ document.addEventListener("DOMContentLoaded", () => {
     context.restore();
   }
 
-  function wrapText(context, text, x, y, maxWidth, lineHeight) {
-    const words = text.split(' ');
-    let line = '';
-    let currentY = y;
-    for (let n = 0; n < words.length; n++) {
-      let testLine = line + words[n] + ' ';
-      if (context.measureText(testLine).width > maxWidth && n > 0) {
-        context.fillText(line, x, currentY);
-        line = words[n] + ' ';
-        currentY += lineHeight;
-      } else {
-        line = testLine;
-      }
-    }
-    context.fillText(line, x, currentY);
-  }
+//#endregion
+
+//#region Box And Text Dimensions
 
   function calculateAutoBoxDimensions(context, title, description, maxWidth, lineHeight) {
     context.save();
@@ -201,6 +192,24 @@ document.addEventListener("DOMContentLoaded", () => {
     return { width: boxWidth, height: Math.max(160, boxHeight) };
   }
 
+
+  function wrapText(context, text, x, y, maxWidth, lineHeight) {
+    const words = text.split(' ');
+    let line = '';
+    let currentY = y;
+    for (let n = 0; n < words.length; n++) {
+      let testLine = line + words[n] + ' ';
+      if (context.measureText(testLine).width > maxWidth && n > 0) {
+        context.fillText(line, x, currentY);
+        line = words[n] + ' ';
+        currentY += lineHeight;
+      } else {
+        line = testLine;
+      }
+    }
+    context.fillText(line, x, currentY);
+  }
+//#endregion
 
   function updateAndRender(timestamp) {
     if (!lastTime) lastTime = timestamp;
@@ -289,6 +298,8 @@ document.addEventListener("DOMContentLoaded", () => {
       item.rayCoords = { startX, startY, endX, endY, tolerance: props.width * 2.5 };
     });
 
+
+    //#region HoveredLogic
     if (hoveredItem) {
       const index = ACADEMIC_DATA.indexOf(hoveredItem);
       const angle = (index * (Math.PI * 2 / totalItems)) - Math.PI / 2;
@@ -379,9 +390,10 @@ document.addEventListener("DOMContentLoaded", () => {
       lastHoveredItem = null;
     }
 
+    //#endregion
     requestAnimationFrame(updateAndRender);
   }
-
+//#region BoxPos
   function calculateBoxPosition(targetX, targetY, dirX, dirY, boxWidth, boxHeight, angle, canvasWidth) {
     const isDown = dirY > 0;
     let angleInDegrees = Math.round((angle + Math.PI / 2) * (180 / Math.PI));
@@ -424,7 +436,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     return { boxX, boxY, debugTargetX: targetX + dynamicPushX, debugTargetY: targetY + dynamicPushY };
   }
-
+//#endregion
 
   canvas.addEventListener("mousemove", (e) => {
     const rect = canvas.getBoundingClientRect();
@@ -466,6 +478,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  //#region ClickEasterEgg
   canvas.addEventListener("click", (e) => {
     const rect = canvas.getBoundingClientRect();
     const mouseX = (e.clientX - rect.left) * (logicalWidth / rect.width);
@@ -476,6 +489,6 @@ document.addEventListener("DOMContentLoaded", () => {
       randomizeShardOrbits(false);
     }
   });
-
+//#endregion
   requestAnimationFrame(updateAndRender);
 });
